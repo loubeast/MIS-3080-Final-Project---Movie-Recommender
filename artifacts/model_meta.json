@@ -1,0 +1,140 @@
+{
+  "selected_model": "XGBoost (TMDB + Netflix)",
+  "target": "vote_average",
+  "feature_groups": {
+    "numeric_base": [
+      "release_year",
+      "runtime",
+      "log_budget",
+      "log_revenue",
+      "log_popularity",
+      "log_vote_count",
+      "n_genres",
+      "n_keywords",
+      "cast_size"
+    ],
+    "netflix_aggregates": [
+      "netflix_mean_rating",
+      "netflix_rating_count",
+      "netflix_rating_std",
+      "netflix_log_count"
+    ],
+    "netflix_svd": [
+      "netflix_svd_00",
+      "netflix_svd_01",
+      "netflix_svd_02",
+      "netflix_svd_03",
+      "netflix_svd_04",
+      "netflix_svd_05",
+      "netflix_svd_06",
+      "netflix_svd_07",
+      "netflix_svd_08",
+      "netflix_svd_09",
+      "netflix_svd_10",
+      "netflix_svd_11",
+      "netflix_svd_12",
+      "netflix_svd_13",
+      "netflix_svd_14",
+      "netflix_svd_15",
+      "netflix_svd_16",
+      "netflix_svd_17",
+      "netflix_svd_18",
+      "netflix_svd_19",
+      "netflix_svd_20",
+      "netflix_svd_21",
+      "netflix_svd_22",
+      "netflix_svd_23",
+      "netflix_svd_24",
+      "netflix_svd_25",
+      "netflix_svd_26",
+      "netflix_svd_27",
+      "netflix_svd_28",
+      "netflix_svd_29",
+      "netflix_svd_30",
+      "netflix_svd_31"
+    ],
+    "low_cardinality_categorical": [
+      "primary_genre",
+      "original_language"
+    ],
+    "high_cardinality_categorical": [
+      "director",
+      "lead_actor"
+    ]
+  },
+  "all_features": [
+    "release_year",
+    "runtime",
+    "log_budget",
+    "log_revenue",
+    "log_popularity",
+    "log_vote_count",
+    "n_genres",
+    "n_keywords",
+    "cast_size",
+    "primary_genre",
+    "original_language",
+    "director",
+    "lead_actor",
+    "netflix_mean_rating",
+    "netflix_rating_count",
+    "netflix_rating_std",
+    "netflix_log_count",
+    "netflix_svd_00",
+    "netflix_svd_01",
+    "netflix_svd_02",
+    "netflix_svd_03",
+    "netflix_svd_04",
+    "netflix_svd_05",
+    "netflix_svd_06",
+    "netflix_svd_07",
+    "netflix_svd_08",
+    "netflix_svd_09",
+    "netflix_svd_10",
+    "netflix_svd_11",
+    "netflix_svd_12",
+    "netflix_svd_13",
+    "netflix_svd_14",
+    "netflix_svd_15",
+    "netflix_svd_16",
+    "netflix_svd_17",
+    "netflix_svd_18",
+    "netflix_svd_19",
+    "netflix_svd_20",
+    "netflix_svd_21",
+    "netflix_svd_22",
+    "netflix_svd_23",
+    "netflix_svd_24",
+    "netflix_svd_25",
+    "netflix_svd_26",
+    "netflix_svd_27",
+    "netflix_svd_28",
+    "netflix_svd_29",
+    "netflix_svd_30",
+    "netflix_svd_31"
+  ],
+  "n_train": 2921,
+  "n_test": 731,
+  "metrics": {
+    "Mean baseline": {
+      "MAE": 0.6659,
+      "RMSE": 0.8499,
+      "R2": -0.0008
+    },
+    "Linear regression (TMDB)": {
+      "MAE": 0.4755,
+      "RMSE": 0.611,
+      "R2": 0.4827
+    },
+    "XGBoost (TMDB only)": {
+      "MAE": 0.4182,
+      "RMSE": 0.5504,
+      "R2": 0.5802
+    },
+    "XGBoost (TMDB + Netflix)": {
+      "MAE": 0.379,
+      "RMSE": 0.5003,
+      "R2": 0.6532
+    }
+  }
+}

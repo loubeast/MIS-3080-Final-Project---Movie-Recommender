@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Streamlit
+.streamlit/secrets.toml      # never commit secrets!
+
+# Raw data — too big for the repo, not needed by the deployed app.
+# (The app reads from artifacts/, which IS committed.)
+data/
+
+# Notebook output cells (keep code cells but strip executed outputs).
+# Comment this out if you want to ship pre-rendered notebooks.
+# *.ipynb

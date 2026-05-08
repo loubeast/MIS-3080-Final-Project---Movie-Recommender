@@ -1,0 +1,35 @@
+# Core data + ML
+pandas
+numpy
+scikit-learn
+xgboost
+pyarrow            # parquet I/O
+
+# AI component (embeddings)
+sentence-transformers
+
+# Plotting (used by EDA notebooks; matplotlib also pulled in by shap)
+matplotlib
+seaborn
+
+# Note: `jupyter` is intentionally NOT listed here. Streamlit Cloud doesn't
+# need it to run the app, and on Windows JupyterLab's deeply-nested static
+# files exceed the default 260-char path limit, breaking `pip install`.
+# Run the notebooks in Google Colab, or open them with the VS Code Python
+# extension — both options have notebook support built in.
+
+# UI / deployment
+streamlit
+
+# Per-prediction explanations (SHAP values shown on each result card)
+shap
+
+# Optional: LLM-generated recommendation explanations (bonus)
+google-genai
+
+# For notebook 04 — Netflix Prize feature engineering
+rapidfuzz
+scipy
+
+# Model persistence
+joblib
