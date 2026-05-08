@@ -337,10 +337,8 @@ st.caption(
     "predicted rating (ML) to surface relevant, high-quality matches."
 )
 
-default_query = st.session_state.get("query_input", "")
 query = st.text_input(
     "What are you in the mood for?",
-    value=default_query,
     placeholder="e.g. dark sci-fi with a twist ending, or just a movie title",
     key="query_input_widget",
 )
@@ -349,7 +347,10 @@ st.write("**Try one of these:**")
 example_cols = st.columns(len(EXAMPLE_QUERIES))
 for col, ex in zip(example_cols, EXAMPLE_QUERIES):
     if col.button(ex, use_container_width=True):
-        st.session_state["query_input"] = ex
+        # Write directly to the text-input widget's session-state key.
+        # Streamlit reads this on the next rerun, BEFORE the widget renders,
+        # so the box appears pre-filled with the chip's text.
+        st.session_state["query_input_widget"] = ex
         st.rerun()
 
 
