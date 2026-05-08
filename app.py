@@ -337,6 +337,13 @@ st.caption(
     "predicted rating (ML) to surface relevant, high-quality matches."
 )
 
+def _fill_query(text: str) -> None:
+    """Button on_click callback. Streamlit runs this BEFORE the widget is
+    re-instantiated, which is the only legal time to write to a widget's
+    own session_state key."""
+    st.session_state["query_input_widget"] = text
+
+
 query = st.text_input(
     "What are you in the mood for?",
     placeholder="e.g. dark sci-fi with a twist ending, or just a movie title",
@@ -346,12 +353,7 @@ query = st.text_input(
 st.write("**Try one of these:**")
 example_cols = st.columns(len(EXAMPLE_QUERIES))
 for col, ex in zip(example_cols, EXAMPLE_QUERIES):
-    if col.button(ex, use_container_width=True):
-        # Write directly to the text-input widget's session-state key.
-        # Streamlit reads this on the next rerun, BEFORE the widget renders,
-        # so the box appears pre-filled with the chip's text.
-        st.session_state["query_input_widget"] = ex
-        st.rerun()
+    col.button(ex, use_container_width=True, on_click=_fill_query, args=(ex,))
 
 
 # ---------------------------------------------------------------------------
